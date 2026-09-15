@@ -1,0 +1,78 @@
+---
+import "../styles/global.css";
+import { withBase } from "../lib/paths";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Gameplay developer. Combat, quests, idle loops, and the glue between engines and platforms.",
+  image = "images/meowquest.jpg",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(withBase(image), Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={withBase("favicon.svg")} type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-accent focus:px-3 focus:py-2 focus:text-ink"
+    >
+      Skip to content
+    </a>
+    <header class="sticky top-0 z-40 border-b border-line/80 bg-ink/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-4">
+        <a href={withBase("")} class="font-display text-lg tracking-tight text-paper">
+          Christian Liyanto
+        </a>
+        <nav class="flex flex-wrap items-center gap-4 text-sm text-muted sm:gap-6">
+          <a class="hover:text-paper" href={withBase("#work")}>Work</a>
+          <a class="hover:text-paper" href={withBase("#about")}>About</a>
+          <a class="hover:text-paper" href={withBase("#contact")}>Contact</a>
+          <a
+            class="hover:text-paper"
+            href="https://github.com/Christian-Liyanto"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+        </nav>
+      </div>
+    </header>
+    <slot />
+    <footer class="border-t border-line">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-sm text-muted sm:flex-row sm:justify-between">
+        <p>© {new Date().getFullYear()} Christian Liyanto</p>
+        <p>Astro · Tailwind · GitHub Pages</p>
+      </div>
+    </footer>
+  </body>
+</html>

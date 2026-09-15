@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import { withBase } from "../lib/paths";
+---
+
+<Base title="Not found — Christian Liyanto">
+  <main id="main" class="mx-auto max-w-6xl px-5 py-24">
+    <h1 class="font-display text-5xl">That page is not here.</h1>
+    <p class="mt-4 text-muted">The work lives on the home page.</p>
+    <a class="mt-8 inline-block text-accent underline underline-offset-4" href={withBase("")}>
+      Back home
+    </a>
+  </main>
+</Base>

@@ -1,0 +1,18 @@
+# Build
+node_modules/
+dist/
+.astro/
+
+# Local capture sources (too large for git; web versions live in public/)
+/MeowQuest_1.mp4
+/MeowQuest_2.mp4
+/WonderBits.mp4
+/WordCraft-Demo.mp4
+/_frames/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

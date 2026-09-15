@@ -1,11 +1,11 @@
 ---
 title: MeowQuest
 tagline: A cute idle RPG where a round cat walks a 30-day journey, fights, and duels in rock-paper-scissors.
-year: "2024–2025"
+year: "2025–2026"
 role: Gameplay systems I was responsible for
 kind: game
 featured: true
-order: 4
+order: 5
 orientation: portrait
 stack:
   - Unity

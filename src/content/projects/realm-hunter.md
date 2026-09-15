@@ -1,6 +1,6 @@
 ---
 title: Realm Hunter
-tagline: A 3D creature-hunt RPG demo — explore a folklore realm, sneak NBMons, and talk through a story with Stella.
+tagline: A semi-open-world RPG focused on exploration, quests, and creature collection.
 year: "2022–2023"
 role: Intern gameplay at Not Boring — maps, pathfinding, and AI
 kind: game
@@ -11,26 +11,27 @@ stack:
   - Unity
   - C#
   - Windows
-  - A* pathfinding
+  - A* Pathfinding
   - Behavior trees
 poster: images/realm-hunter.jpg
 videos:
   - youtube: J65hDxrdObc
     poster: images/realm-hunter.jpg
-    caption: Demo — camera tutorial, Stella, capture, climb, and Krak Jr. dialogue
+    caption: Realm Hunter Demo
 links:
   - label: Demo on YouTube
     href: https://www.youtube.com/watch?v=J65hDxrdObc
-  - label: MBKM report
+  - label: Internship Report
     href: https://kc.umn.ac.id/id/eprint/24664/
 ---
 
-Realm Hunter was the internship project at **Not Boring**. The studio was building a Windows Unity RPG: you play a new Hunter, meet Stella, and start a journey by capturing shy creatures (NBMons) with Envy Cubes.
+Realm Hunter was a Unity-based RPG project developed at Not Boring, where I worked as a Gameplay Developer Intern. The game features exploration, quests, creature collection, and a semi-open-world structure.
 
-The demo walks the onboarding I helped ship:
+During my internship, I was responsible for implementing several core gameplay and navigation systems:
 
-- Mouse-look and WASD to find Stella.
-- Climb a cliff, sneak in tall grass, throw a cube, then fight with the right mouse button.
-- A story beat in a wooden house with **Krak Jr.** — a Krakow folklore realm, a letter, Princess Wanda.
+- **Mini Map** — developed the in-game navigation and player/world representation.
+- **World Map** — implemented the broader world navigation system.
+- **A\* Pathfinding** — integrated pathfinding for character navigation and movement.
+- **Behavior Tree** — implemented AI behavior using behavior-tree logic.
 
-My slice on the internship, from the MBKM write-up, was the systems under that demo: **mini-map**, **world map**, **A\* pathfinding**, and **behavior-tree AI**, plus UI implementation from the art team. The project closed at a playable demo.
+These systems supported the game's exploration and AI gameplay while being integrated into the broader Unity project developed by the team.

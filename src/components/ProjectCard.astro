@@ -1,0 +1,88 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { withBase } from "../lib/paths";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const detailsHref = withBase(`projects/${project.id}/`);
+const extra = project.data.links[0];
+const tags = project.data.stack.slice(0, 3);
+
+const tagClass: Record<string, string> = {
+  "C#": "bg-[#7c3aed] text-white",
+  Unity: "bg-zinc-950 text-white",
+  "Unity / Web": "bg-zinc-950 text-white",
+  WebGL: "bg-[#1d4ed8] text-white",
+  React: "bg-[#38bdf8] text-zinc-950",
+  Mobile: "bg-[#334155] text-white",
+  "Idle RPG": "bg-[#7c3aed] text-white",
+  Idle: "bg-[#7c3aed] text-white",
+  Windows: "bg-[#1d4ed8] text-white",
+  "Browser extension": "bg-[#334155] text-white",
+};
+
+function pill(tag: string): string {
+  return tagClass[tag] ?? "bg-[#273044] text-slate-200";
+}
+---
+
+<article
+  class="group flex h-full flex-col overflow-hidden rounded-[1.35rem] bg-[#1b2130] ring-1 ring-white/10"
+>
+  <a href={detailsHref} class="relative block aspect-[16/10] overflow-hidden">
+    <img
+      src={withBase(project.data.poster)}
+      alt={`${project.data.title} gameplay`}
+      class:list={[
+        "h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]",
+        project.data.orientation === "portrait" ? "object-top" : "object-center",
+      ]}
+    />
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1b2130] via-[#1b2130]/45 to-transparent"
+    >
+    </div>
+    <h3
+      class="absolute inset-x-0 bottom-4 px-4 text-center font-sans text-xl font-extrabold uppercase tracking-[0.06em] text-white sm:text-[1.35rem]"
+    >
+      {project.data.title}
+    </h3>
+  </a>
+  <div class="flex flex-1 flex-col px-6 pb-6 pt-3">
+    <ul class="flex flex-wrap justify-center gap-2">
+      {
+        tags.map((tag) => (
+          <li class:list={["rounded-full px-3 py-1 text-xs font-semibold", pill(tag)]}>
+            {tag}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mt-4 flex-1 text-center text-sm leading-relaxed text-slate-300">
+      {project.data.tagline}
+    </p>
+    <div class="mt-5 flex flex-wrap justify-center gap-2">
+      <a
+        href={detailsHref}
+        class="inline-flex items-center rounded-full bg-[#2563eb] px-4 py-2 text-sm font-semibold text-white hover:bg-[#1d4ed8]"
+      >
+        View Details →
+      </a>
+      {
+        extra && (
+          <a
+            href={extra.href}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white hover:border-white/45"
+          >
+            {extra.label}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</article>

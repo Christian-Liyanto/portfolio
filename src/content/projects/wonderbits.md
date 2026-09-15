@@ -1,7 +1,7 @@
 ---
 title: WonderBits
 tagline: An idle pet that lives inside X — a browser extension overlay for raising Bits and farming islands.
-year: "2024"
+year: "2024–2025"
 role: Gameplay and extension overlay I was responsible for
 kind: game
 featured: true

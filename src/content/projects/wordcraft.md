@@ -1,11 +1,11 @@
 ---
 title: WordCraft
 tagline: Combine Fire and Water into Steam, then chase a target word — a Unity WebGL game that runs inside Reddit.
-year: "2025"
+year: "Feb 27 – Mar 28, 2025"
 role: Unity gameplay I was responsible for
 kind: game
 featured: true
-order: 5
+order: 4
 orientation: landscape
 stack:
   - Unity
@@ -26,7 +26,7 @@ links:
     href: https://www.reddit.com/r/nb_wordcraft/comments/1jihjp6/wordcraft_difficulty_normal/
 ---
 
-WordCraft was built for Hack Reddit 2025. Players fuse two words to discover a third, grow a dictionary, and race a timer toward a target — in the demo, **Humidity**.
+WordCraft was built for Hack Reddit 2025 (February 27 – March 28). Players fuse two words to discover a third, grow a dictionary, and race a timer toward a target — in the demo, **Humidity**.
 
 The playable loop:
 

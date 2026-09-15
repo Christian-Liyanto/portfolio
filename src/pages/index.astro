@@ -95,6 +95,7 @@ const rest = projects.filter((p) => !p.data.featured);
                   {project.data.videos.map((video) => (
                     <VideoBlock
                       src={video.src}
+                      youtube={video.youtube}
                       poster={video.poster}
                       caption={video.caption}
                       orientation={project.data.orientation}
@@ -149,8 +150,9 @@ const rest = projects.filter((p) => !p.data.featured);
               counter, the shop on a sidebar, the word you just invented.
             </p>
             <p>
-              Recent work includes a mobile cat idle RPG, an idle pet that lives
-              as an X extension, and a Unity WebGL word-crafting game inside Reddit.
+              Recent work started as an intern on a 3D creature-hunt RPG, then a
+              hybrid casual island adventure, a mobile cat idle RPG, an idle pet
+              on X, and a Unity WebGL word-crafting game inside Reddit.
             </p>
           </div>
         </div>
@@ -163,7 +165,7 @@ const rest = projects.filter((p) => !p.data.featured);
             </div>
             <div>
               <dt class="text-muted">Platforms</dt>
-              <dd>Mobile, WebGL, browser extensions</dd>
+              <dd>Mobile, Windows, WebGL, browser extensions</dd>
             </div>
             <div>
               <dt class="text-muted">Web</dt>

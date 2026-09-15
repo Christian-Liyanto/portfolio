@@ -5,7 +5,7 @@ year: "2024"
 role: Gameplay and extension overlay I was responsible for
 kind: game
 featured: true
-order: 2
+order: 3
 orientation: landscape
 stack:
   - Browser extension

@@ -74,6 +74,7 @@ const { Content } = await render(project);
           {project.data.videos.map((video) => (
             <VideoBlock
               src={video.src}
+              youtube={video.youtube}
               poster={video.poster}
               caption={video.caption}
               orientation={project.data.orientation}

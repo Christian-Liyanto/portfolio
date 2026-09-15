@@ -5,7 +5,7 @@ year: "2024–2025"
 role: Gameplay systems I was responsible for
 kind: game
 featured: true
-order: 1
+order: 4
 orientation: portrait
 stack:
   - Unity

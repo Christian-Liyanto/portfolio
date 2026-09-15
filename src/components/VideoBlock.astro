@@ -2,13 +2,14 @@
 import { withBase } from "../lib/paths";
 
 interface Props {
-  src: string;
+  src?: string;
+  youtube?: string;
   poster: string;
   caption?: string;
   orientation?: "portrait" | "landscape";
 }
 
-const { src, poster, caption, orientation = "landscape" } = Astro.props;
+const { src, youtube, poster, caption, orientation = "landscape" } = Astro.props;
 const portrait = orientation === "portrait";
 ---
 
@@ -16,18 +17,34 @@ const portrait = orientation === "portrait";
   <div
     class:list={[
       "video-shell overflow-hidden rounded-2xl ring-1 ring-line",
-      portrait ? "mx-auto max-w-[320px] phone-frame" : "",
+      portrait && !youtube ? "mx-auto max-w-[320px] phone-frame" : "",
+      youtube ? "aspect-video" : "",
     ]}
   >
-    <video
-      class:list={[portrait ? "h-full w-full object-cover" : "h-auto w-full"]}
-      controls
-      playsinline
-      preload="metadata"
-      poster={withBase(poster)}
-      src={withBase(src)}
-    >
-    </video>
+    {
+      youtube ? (
+        <iframe
+          class="h-full w-full"
+          src={`https://www.youtube-nocookie.com/embed/${youtube}`}
+          title={caption ?? "Gameplay video"}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        />
+      ) : (
+        src && (
+          <video
+            class:list={[portrait ? "h-full w-full object-cover" : "h-auto w-full"]}
+            controls
+            playsinline
+            preload="metadata"
+            poster={withBase(poster)}
+            src={withBase(src)}
+          />
+        )
+      )
+    }
   </div>
   {
     caption && (

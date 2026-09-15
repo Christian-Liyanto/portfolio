@@ -16,7 +16,8 @@ const projects = defineCollection({
     videos: z
       .array(
         z.object({
-          src: z.string(),
+          src: z.string().optional(),
+          youtube: z.string().optional(),
           poster: z.string(),
           caption: z.string(),
         }),

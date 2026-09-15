@@ -2,7 +2,7 @@
 title: Realm Hunter
 tagline: A semi-open-world RPG focused on exploration, quests, and creature collection.
 year: "2022–2023"
-role: Intern gameplay at Not Boring — maps, pathfinding, and AI
+role: Intern Unity Developer
 kind: game
 featured: true
 order: 1
@@ -19,8 +19,6 @@ videos:
     poster: images/realm-hunter.jpg
     caption: Realm Hunter Demo
 links:
-  - label: Demo on YouTube
-    href: https://www.youtube.com/watch?v=J65hDxrdObc
   - label: Internship Report
     href: https://kc.umn.ac.id/id/eprint/24664/
 ---

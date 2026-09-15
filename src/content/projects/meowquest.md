@@ -1,36 +1,42 @@
 ---
 title: MeowQuest
-tagline: A cute idle RPG where a round cat walks a 30-day journey, fights, and duels in rock-paper-scissors.
+tagline: A cute idle RPG where a round cat embarks on a 30-day adventure filled with combat, minigames, and exploration.
 year: "2025–2026"
-role: Gameplay systems I was responsible for
+role: Unity Developer
 kind: game
 featured: true
 order: 5
 orientation: portrait
 stack:
   - Unity
+  - C#
   - Mobile
   - Idle RPG
+  - Gameplay UI
+  - Localization
   - Combat
-  - Quest UI
 poster: images/meowquest.jpg
 videos:
   - src: videos/meowquest-1.mp4
     poster: images/meowquest-combat.jpg
-    caption: Combat, blessings, and a day-by-day journey log
+    caption: Core Gameplay Loop
   - src: videos/meowquest-2.mp4
     poster: images/meowquest.jpg
-    caption: Title, story, village, and the quest board
-links: []
+    caption: New Player Experience
+links:
+  - label: MeowQuest on X
+    href: https://x.com/MeowQuestGame
 ---
 
-MeowQuest is a vertical mobile idle adventure. You play a round cat with a sword, moving through a 30-day journey with auto-battles, blessings, inventory, and a village quest board.
+**MeowQuest** is a mobile idle RPG where players guide a cat through a 30-day adventure, combining automated progression with combat, exploration, quests, and interactive minigames.
 
-The two clips cover the player-facing loop I worked on:
+I worked as a **Unity Developer**, focusing primarily on gameplay systems, gameplay UI, and supporting systems for the game's player experience.
 
-- **Combat** — side-view encounters with HP bars, hit feedback, speed-up, and stat strips for XP, HP, attack, and defense.
-- **Journey days** — a dated log that advances the story, gates fights, and tracks star checkpoints at days 1, 11, 20, and 30.
-- **Minigames** — a rock-paper-scissors duel that interrupts the auto-loop with a real choice.
-- **Hub and story** — a cat village with a quest board, plus illustrated story beats (the captured princess, the villain at the portal).
+Key areas of my work included:
 
-The title screen already sells the fantasy: floating biomes (graveyard, lava, temple, candy, ice) around one cat on a cliff. The work was making that fantasy play as a readable daily loop, not a wall of menus.
+- **Gameplay UI** — implemented gameplay interfaces and integrated UI/UX designs into the Unity gameplay experience.
+- **Adventure Minigames** — implemented QTE-style minigames used during adventures, including **Rock Paper Scissors, Hi-Lo, and Dice**.
+- **Power-Up System** — implemented power-ups that provide advantages and modify the player's capabilities during adventures.
+- **Equipment System** — implemented equipment-related gameplay and progression systems.
+- **Localization** — implemented localization support for the game's UI and user-facing content.
+- **Gameplay Systems** — contributed to additional gameplay features and systems across the game's adventure and progression loops.

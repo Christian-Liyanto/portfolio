@@ -1,33 +1,45 @@
 ---
 title: Wonder Tales
-tagline: A hybrid casual idle adventure — gather, repair, and grow a village on a storybook island.
+tagline: A hybrid-casual idle adventure about gathering, exploration, and rebuilding a storybook island.
 year: "2023–2024"
-role: Gameplay I was responsible for, before WonderBits
+role: Unity Developer
 kind: game
 featured: true
 order: 2
 orientation: landscape
 stack:
   - Unity
+  - C#
   - Mobile
   - Idle
-  - Hybrid casual
+  - Hybrid Casual
+  - Behavior Trees
+  - Pathfinding
 poster: images/wonder-tales.jpg
 videos:
   - youtube: j_gL3LsFI7M
     poster: images/wonder-tales.jpg
-    caption: Dec 8 playtest — island, resources, and the Repair Beacon loop
+    caption: Dec 8 playtest — island exploration, resource gathering, and the Repair Beacon loop
 links:
   - label: Playtest on YouTube
     href: https://www.youtube.com/watch?v=j_gL3LsFI7M
 ---
 
-Wonder Tales is a hybrid casual idle adventure I worked on before being moved to WonderBits. You play a small creature on an island: gather wood and stone, spend coins, and knock out quests like **Repair Beacon 1**.
+**Wonder Tales** is a hybrid-casual idle adventure developed at **Not Boring**, combining exploration, resource gathering, quests, and village progression on a storybook-inspired island.
 
-The Dec 8 playtest shows the loop I was responsible for on the player-facing side:
+I worked as a **Gameplay Developer**, primarily responsible for implementing the core gameplay systems and integrating UI/UX designs into the game.
 
-- A top-down island with a wooden pier, water, and a quest marker sitting on the dirt.
-- Resource chips in the HUD (wood, stone, gold, gems) and a three-slot bar at the bottom of the screen.
-- Objective text that tells you what to fix next, not a wall of menus.
+### Gameplay
 
-The wider design is an arcade idle RPG: gather, craft, expand the village, and push into new regions while the idle layer keeps the island alive when you put the phone down.
+I handled several of the project's core gameplay systems, including:
+
+- **Character Controller** — implemented player movement and core character interactions.
+- **Behavior Tree** — implemented behavior logic for gameplay entities.
+- **Pathfinding** — implemented navigation and movement systems.
+- **Hybrid-Casual Core Loop** — contributed to the core gameplay systems supporting the gather, interact, progress, and restoration loop.
+
+### UI / UX
+
+I also implemented the UI/UX designs into the gameplay experience across both **World Space** and **Screen Space** canvases, integrating gameplay information and interactions into the Unity project.
+
+The project was developed as a mobile-focused hybrid-casual experience, combining active gameplay with idle progression.

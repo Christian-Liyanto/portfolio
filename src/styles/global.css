@@ -3,13 +3,13 @@
 @theme {
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --color-ink: #100e0c;
-  --color-ink-2: #1a1714;
-  --color-line: #2c261f;
-  --color-paper: #f3ece3;
-  --color-muted: #a89b8c;
-  --color-accent: #f0a35e;
-  --color-accent-2: #7ec8a3;
+  --color-ink: #0b0d12;
+  --color-ink-2: #1b2130;
+  --color-line: #2c3548;
+  --color-paper: #f4f7fb;
+  --color-muted: #9aa6b8;
+  --color-accent: #2563eb;
+  --color-accent-2: #1d4ed8;
 }
 
 html {
@@ -25,7 +25,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: #fff;
 }
 
 .phone-frame {
@@ -34,5 +34,5 @@ body {
 }
 
 .video-shell {
-  background: #090807;
+  background: #07090e;
 }

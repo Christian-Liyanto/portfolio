@@ -30,7 +30,7 @@ function pill(tag: string): string {
 ---
 
 <article
-  class="group flex h-full flex-col overflow-hidden rounded-[1.35rem] bg-[#1b2130] ring-1 ring-white/10"
+  class="group flex h-full flex-col overflow-hidden rounded-[1.35rem] bg-ink-2 ring-1 ring-white/10"
 >
   <a href={detailsHref} class="relative block aspect-[16/10] overflow-hidden">
     <img
@@ -42,7 +42,7 @@ function pill(tag: string): string {
       ]}
     />
     <div
-      class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1b2130] via-[#1b2130]/45 to-transparent"
+      class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-2 via-ink-2/45 to-transparent"
     >
     </div>
     <h3
@@ -67,7 +67,7 @@ function pill(tag: string): string {
     <div class="mt-5 flex flex-wrap justify-center gap-2">
       <a
         href={detailsHref}
-        class="inline-flex items-center rounded-full bg-[#2563eb] px-4 py-2 text-sm font-semibold text-white hover:bg-[#1d4ed8]"
+        class="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-accent-2"
       >
         View Details →
       </a>

@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://christian-liyanto.github.io",
-  base: "/portofolio",
+  base: "/portfolio",
   vite: {
     plugins: [tailwindcss()],
   },

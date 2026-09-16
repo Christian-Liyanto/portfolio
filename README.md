@@ -2,7 +2,7 @@
 
 Personal site for gameplay work. Built with [Astro](https://astro.build) and Tailwind, hosted on GitHub Pages.
 
-Live (after Pages is enabled): https://christian-liyanto.github.io/portofolio/
+Live (after Pages is enabled): https://christian-liyanto.github.io/portfolio/
 
 ## Run locally
 

@@ -1,15 +1,24 @@
 # Christian Liyanto — portfolio
 
-Personal site for gameplay work. Built with [Astro](https://astro.build) and Tailwind, hosted on GitHub Pages.
+Personal site for gameplay work. Built with React, React Router Framework Mode, TypeScript, Vite, and Tailwind CSS 4. The pages are statically pre-rendered and hosted on GitHub Pages.
 
 Live (after Pages is enabled): https://christian-liyanto.github.io/portfolio/
 
 ## Run locally
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
+
+Create and preview the GitHub Pages build:
+
+```bash
+npm run build
+npm run preview
+```
+
+Project details, metadata, and rich page content live in `app/data/projects.tsx`.
 
 ## Videos
 

@@ -5,7 +5,7 @@ build/
 
 # Local capture sources
 /_frames/
-/references
+/.references
 
 # OS / editor
 .DS_Store

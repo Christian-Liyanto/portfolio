@@ -18,7 +18,7 @@ npm run build
 npm run preview
 ```
 
-Project details, metadata, and rich page content live in `app/data/projects.tsx`.
+Project details, metadata, and rich page content live in `src/data/projects.tsx`.
 
 ## Videos
 

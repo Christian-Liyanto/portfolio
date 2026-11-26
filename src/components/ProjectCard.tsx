@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: Props) {
     <article className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] bg-ink-2 ring-1 ring-white/10">
       <Link
         to={detailsHref}
-        className="relative block aspect-[16/10] overflow-hidden"
+        className="relative block aspect-16/10 overflow-hidden"
       >
         <img
           src={withBase(project.poster)}
@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: Props) {
             project.orientation === "portrait" ? "object-top" : "object-center"
           }`}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-2 via-ink-2/45 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink-2 via-ink-2/45 to-transparent" />
         <h3 className="absolute inset-x-0 bottom-4 px-4 text-center font-sans text-xl font-extrabold uppercase tracking-[0.06em] text-white sm:text-[1.35rem]">
           {project.title}
         </h3>

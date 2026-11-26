@@ -1,5 +1,6 @@
 import type { ProjectVideo } from "../data/projects";
 import { withBase } from "../lib/paths";
+import styles from "../styles/VideoBlock.module.css";
 
 type Props = ProjectVideo & {
   orientation: "portrait" | "landscape";
@@ -17,8 +18,8 @@ export default function VideoBlock({
   return (
     <figure className="min-w-0">
       <div
-        className={`video-shell overflow-hidden rounded-2xl ring-1 ring-line ${
-          portrait && !youtube ? "phone-frame mx-auto max-w-[320px]" : ""
+        className={`${styles.videoShell} overflow-hidden rounded-2xl ring-1 ring-line ${
+          portrait && !youtube ? `${styles.phoneFrame} mx-auto max-w-[320px]` : ""
         } ${youtube ? "aspect-video" : ""}`}
       >
         {youtube ? (

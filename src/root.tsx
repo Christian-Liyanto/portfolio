@@ -1,12 +1,6 @@
 import type { ReactNode } from "react";
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
-import stylesheet from "./app.css?url";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import stylesheet from "./styles/global.css?url";
 import { withBase } from "./lib/paths";
 
 export function links() {

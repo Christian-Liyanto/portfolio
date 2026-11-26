@@ -1,4 +1,4 @@
-import { cp, copyFile, readdir, rm } from "node:fs/promises";
+import { cp, copyFile, readFile, readdir, rm } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -7,7 +7,11 @@ const repositoryRoot = path.resolve(
   "..",
 );
 const clientOutput = path.join(repositoryRoot, "build", "client");
-const prefixedOutput = path.join(clientOutput, "portfolio");
+const siteConfig = JSON.parse(
+  await readFile(path.join(repositoryRoot, "site.config.json"), "utf8"),
+);
+const baseSegments = siteConfig.basePath.split("/").filter(Boolean);
+const prefixedOutput = path.join(clientOutput, ...baseSegments);
 const notFoundPage = path.join(prefixedOutput, "404", "index.html");
 
 for (const entry of await readdir(prefixedOutput, { withFileTypes: true })) {

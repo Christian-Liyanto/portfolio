@@ -1,17 +1,18 @@
 import { useParams } from "react-router";
+import NotFoundPage from "../components/NotFoundPage";
+import ProjectExternalLink from "../components/ProjectExternalLink";
+import ProjectStackTags from "../components/ProjectStackTags";
 import VideoBlock from "../components/VideoBlock";
 import { getProject } from "../data/projects";
 import { canonicalUrl, siteUrl, withBase } from "../lib/paths";
+import { notFoundMetadata, pageMetadata } from "../lib/metadata";
 import type { Route } from "./+types/project";
 
 export function meta({ params }: Route.MetaArgs) {
   const project = getProject(params.slug);
 
   if (!project) {
-    return [
-      { title: "Not found — Christian Liyanto" },
-      { name: "description", content: "The work lives on the home page." },
-    ];
+    return notFoundMetadata();
   }
 
   const title = `${project.title} — Christian Liyanto`;
@@ -19,38 +20,21 @@ export function meta({ params }: Route.MetaArgs) {
   const canonical = canonicalUrl(`/projects/${project.slug}/`);
 
   return [
-    { title },
-    { name: "description", content: project.tagline },
-    { property: "og:title", content: title },
-    { property: "og:description", content: project.tagline },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: canonical },
-    { property: "og:image", content: image },
-    { name: "twitter:card", content: "summary_large_image" },
+    ...pageMetadata({
+      title,
+      description: project.tagline,
+      url: canonical,
+      image,
+    }),
     { tagName: "link", rel: "canonical", href: canonical },
   ];
-}
-
-function NotFoundContent() {
-  return (
-    <main id="main" className="mx-auto max-w-6xl px-5 py-24">
-      <h1 className="font-display text-5xl">That page is not here.</h1>
-      <p className="mt-4 text-muted">The work lives on the home page.</p>
-      <a
-        className="mt-8 inline-block text-accent underline underline-offset-4"
-        href={withBase("")}
-      >
-        Back home
-      </a>
-    </main>
-  );
 }
 
 export default function ProjectRoute() {
   const { slug } = useParams();
   const project = getProject(slug);
 
-  if (!project) return <NotFoundContent />;
+  if (!project) return <NotFoundPage />;
 
   return (
     <main id="main" className="mx-auto max-w-6xl px-5 py-16">
@@ -67,33 +51,29 @@ export default function ProjectRoute() {
       <h1 className="mt-3 font-display text-5xl leading-tight">
         {project.title}
       </h1>
+      <div className="mt-4">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+          My role
+        </p>
+        <p className="mt-1 text-lg font-semibold text-paper">{project.role}</p>
+      </div>
       <p className="mt-4 max-w-2xl text-lg text-muted">{project.tagline}</p>
-      <p className="mt-3 text-sm text-paper">{project.role}</p>
 
-      <ul className="mt-6 flex flex-wrap gap-2">
-        {project.stack.map((tag) => (
-          <li
-            key={tag}
-            className="rounded-full bg-ink-2 px-3 py-1 text-xs font-semibold text-paper"
-          >
-            {tag}
-          </li>
-        ))}
-      </ul>
+      <ProjectStackTags tags={project.stack} layout="grouped" />
 
       {project.links.length > 0 && (
-        <div className="mt-6 flex flex-wrap gap-3">
-          {project.links.map((link) => (
-            <a
-              key={link.href}
-              className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold hover:border-accent hover:text-accent"
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="mt-7 flex flex-wrap gap-3">
+          {[...project.links]
+            .sort((a, b) =>
+              a.priority === "primary"
+                ? -1
+                : b.priority === "primary"
+                  ? 1
+                  : 0,
+            )
+            .map((link) => (
+              <ProjectExternalLink key={link.href} link={link} />
+            ))}
         </div>
       )}
 

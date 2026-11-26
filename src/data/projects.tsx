@@ -10,6 +10,7 @@ export type ProjectVideo = {
 export type ProjectLink = {
   label: string;
   href: string;
+  priority: "primary" | "secondary";
 };
 
 export type Project = {
@@ -36,7 +37,7 @@ export const projects: Project[] = [
     tagline:
       "A semi-open-world RPG focused on exploration, quests, and creature collection.",
     year: "2022–2023",
-    role: "Intern Unity Developer",
+    role: "Unity Engineer (Intern)",
     kind: "game",
     featured: true,
     order: 1,
@@ -54,13 +55,14 @@ export const projects: Project[] = [
       {
         label: "Internship Report",
         href: "https://kc.umn.ac.id/id/eprint/24664/",
+        priority: "primary",
       },
     ],
     content: (
       <>
         <p>
           Realm Hunter was a Unity-based RPG project developed at Not Boring,
-          where I worked as a Gameplay Developer Intern. The game features
+          where I worked as a Unity Engineer Intern. The game features
           exploration, quests, creature collection, and a semi-open-world
           structure.
         </p>
@@ -100,7 +102,7 @@ export const projects: Project[] = [
     tagline:
       "A hybrid-casual idle adventure about gathering, exploration, and rebuilding a storybook island.",
     year: "2023–2024",
-    role: "Unity Developer",
+    role: "Unity Engineer",
     kind: "game",
     featured: true,
     order: 2,
@@ -127,6 +129,7 @@ export const projects: Project[] = [
       {
         label: "Playtest on YouTube",
         href: "https://www.youtube.com/watch?v=j_gL3LsFI7M",
+        priority: "primary",
       },
     ],
     content: (
@@ -138,14 +141,11 @@ export const projects: Project[] = [
           storybook-inspired island.
         </p>
         <p>
-          I worked as a <strong>Gameplay Developer</strong>, primarily
+          I worked as a <strong>Unity Engineer</strong>, primarily
           responsible for implementing the core gameplay systems and
-          integrating UI/UX designs into the game.
+          integrating UI/UX designs into the game in Unity Engine.
         </p>
         <h2>Gameplay</h2>
-        <p>
-          I handled several of the project's core gameplay systems, including:
-        </p>
         <ul>
           <li>
             <strong>Character Controller</strong> — implemented player
@@ -172,10 +172,6 @@ export const projects: Project[] = [
           canvases, integrating gameplay information and interactions into the
           Unity project.
         </p>
-        <p>
-          The project was developed as a mobile-focused hybrid-casual
-          experience, combining active gameplay with idle progression.
-        </p>
       </>
     ),
   },
@@ -185,7 +181,7 @@ export const projects: Project[] = [
     tagline:
       "A SocialFi idle game built with React and delivered across X, browser extension, PWA, and LINE.",
     year: "2024–2025",
-    role: "Frontend Developer at Not Boring",
+    role: "Frontend Engineer",
     kind: "game",
     featured: true,
     order: 3,
@@ -209,54 +205,39 @@ export const projects: Project[] = [
       },
     ],
     links: [
-      { label: "WonderBits on X", href: "https://x.com/wonderbitsio" },
+      {
+        label: "WonderBits on X",
+        href: "https://x.com/wonderbitsio",
+        priority: "primary",
+      },
     ],
     content: (
       <>
         <p>
           <strong>WonderBits</strong> is a SocialFi idle game built with{" "}
-          <strong>React</strong>, combining virtual pets, island farming, and
+          <strong>React</strong> framework in TypeScript and JavaScript language, combining virtual pets, island farming, and
           social interaction. The project was delivered across multiple web
           platforms, including a browser extension, PWA, and <strong>LINE Mini
           Dapp</strong> powered by the <strong>Kaia</strong> ecosystem.
         </p>
         <p>
-          I worked as a <strong>Frontend Developer</strong>, handling most of
-          the frontend development for the project. My work focused on building
-          the web-based game experience, adapting the frontend across different
-          platforms and environments, and implementing localization for the
-          game's user-facing experience.
+          I worked as a <strong>Frontend Engineer</strong>, handling most of
+          the project's frontend implementation such as:
         </p>
-        <p>Key areas of my work included:</p>
         <ul>
-          <li>
-            <strong>Frontend Development</strong> — implemented and maintained
-            the web-based game experience using React.
-          </li>
-          <li>
-            <strong>Browser Extension &amp; PWA</strong> — adapted the game
-            frontend for different web-based platforms.
-          </li>
           <li>
             <strong>UI/UX Implementation</strong> — translated gameplay and
             interface designs into functional frontend experiences.
           </li>
           <li>
-            <strong>Localization</strong> — implemented localization support
-            for the game's frontend and user-facing content.
+            <strong>Platform Adaptation</strong> — adapted the frontend for the
+            browser extension, PWA, and LINE Mini Dapp.
           </li>
           <li>
-            <strong>Platform Integration</strong> — worked on the frontend
-            experience across X and the project's broader Web3/social
-            ecosystem.
+            <strong>Localization</strong> — implemented localization support
+            for the game's user-facing content.
           </li>
         </ul>
-        <p>
-          The project presented a unique frontend challenge: delivering a
-          consistent game experience across a browser extension, standalone web
-          application, and LINE's Mini Dapp ecosystem while supporting multiple
-          platforms and languages.
-        </p>
       </>
     ),
   },
@@ -266,7 +247,7 @@ export const projects: Project[] = [
     tagline:
       "A word-combination game built with Unity WebGL and adapted to run directly inside Reddit.",
     year: "Feb 27 – Mar 28, 2025",
-    role: "Unity Developer",
+    role: "Unity Engineer",
     kind: "game",
     featured: true,
     order: 4,
@@ -282,10 +263,15 @@ export const projects: Project[] = [
       },
     ],
     links: [
-      { label: "Devpost", href: "https://devpost.com/software/word-craft" },
+      {
+        label: "Devpost",
+        href: "https://devpost.com/software/word-craft",
+        priority: "primary",
+      },
       {
         label: "Reddit Demo",
         href: "https://www.reddit.com/r/nb_wordcraft/comments/1jihjp6/wordcraft_difficulty_normal/",
+        priority: "secondary",
       },
     ],
     content: (
@@ -298,38 +284,20 @@ export const projects: Project[] = [
           within a timed gameplay loop.
         </p>
         <p>
-          My primary responsibility was <strong>refactoring the existing
-          Unity/WebGL build to work within Reddit's Devvit environment</strong>.
-          This involved adapting the game for browser-based embedding and
-          establishing communication between the Unity WebGL client and the
-          surrounding Devvit application.
+          My primary responsibility was adapting the existing Unity/WebGL build
+          for Reddit's Devvit environment.
         </p>
-        <p>Key areas of my work included:</p>
         <ul>
           <li>
-            <strong>WebGL Refactoring</strong> — adapted the existing Unity
-            project and build to meet the requirements of the Reddit
-            environment.
-          </li>
-          <li>
-            <strong>Devvit Integration</strong> — integrated the Unity WebGL
-            game into the Devvit-powered Reddit experience.
+            <strong>Devvit Integration</strong> — embedded the Unity WebGL game
+            in the Reddit experience.
           </li>
           <li>
             <strong>Unity ↔ Web Communication</strong> — implemented the
             communication layer between the WebGL game and its surrounding web
             application.
           </li>
-          <li>
-            <strong>Reddit Deployment</strong> — configured the game to launch
-            and run directly within a Reddit post.
-          </li>
         </ul>
-        <p>
-          The result was a Unity game that could be played directly inside
-          Reddit, transforming an existing standalone WebGL build into an
-          embedded Reddit gaming experience.
-        </p>
       </>
     ),
   },
@@ -339,7 +307,7 @@ export const projects: Project[] = [
     tagline:
       "A cute idle RPG where a round cat embarks on a 30-day adventure filled with combat, minigames, and exploration.",
     year: "2025–2026",
-    role: "Unity Developer",
+    role: "Unity Engineer",
     kind: "game",
     featured: true,
     order: 5,
@@ -366,7 +334,13 @@ export const projects: Project[] = [
         caption: "New Player Experience",
       },
     ],
-    links: [{ label: "MeowQuest on X", href: "https://x.com/MeowQuestGame" }],
+    links: [
+      {
+        label: "MeowQuest on X",
+        href: "https://x.com/MeowQuestGame",
+        priority: "primary",
+      },
+    ],
     content: (
       <>
         <p>
@@ -375,7 +349,7 @@ export const projects: Project[] = [
           combat, exploration, quests, and interactive minigames.
         </p>
         <p>
-          I worked as a <strong>Unity Developer</strong>, focusing primarily on
+          I worked as a <strong>Unity Engineer</strong>, focusing primarily on
           gameplay systems, gameplay UI, and supporting systems for the game's
           player experience.
         </p>
@@ -402,11 +376,6 @@ export const projects: Project[] = [
           <li>
             <strong>Localization</strong> — implemented localization support
             for the game's UI and user-facing content.
-          </li>
-          <li>
-            <strong>Gameplay Systems</strong> — contributed to additional
-            gameplay features and systems across the game's adventure and
-            progression loops.
           </li>
         </ul>
       </>

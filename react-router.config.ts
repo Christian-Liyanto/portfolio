@@ -1,8 +1,9 @@
 import type { Config } from "@react-router/dev/config";
+import siteConfig from "./site.config.json";
 
 export default {
   appDirectory: "src",
-  basename: "/portfolio/",
+  basename: siteConfig.basePath,
   ssr: false,
   future: {
     v8_middleware: true,

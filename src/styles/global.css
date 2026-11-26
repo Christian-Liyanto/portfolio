@@ -13,7 +13,8 @@
 }
 
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -27,4 +28,3 @@ body {
   background: var(--color-accent);
   color: #fff;
 }
-
